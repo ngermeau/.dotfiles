@@ -37,7 +37,6 @@ set ignorecase smartcase                                    "make searches case-
 
 " UI preferences 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme Monokai
 set colorcolumn=100
 set showcmd                                                 "show command in bottom bar
 set wildmenu                                                "visual autocomplete for command menu
@@ -79,10 +78,10 @@ nmap j gj
 " nmap <Leader>/ :nohl<CR>
 
 " panel nav 
-map <C-r> :CtrlP<CR>
-map <C-t> :CtrlPBufTag<CR>
-map <C-g> :CtrlPBuffer<CR>
-map <C-v> :NERDTreeToggle<CR>
+map <C-m> :CtrlP<CR>
+map <C-y> :CtrlPBuffer<CR>
+map <C-n> :CtrlPBufTag<CR>
+map <C-g> :NERDTreeToggle<CR>
 
 " splits nav
 map <C-h> <C-w><C-h>
@@ -98,17 +97,8 @@ map <leader>ic :Gcommit<CR>
 nmap <Leader>fv :e $MYVIMRC<CR>
 
 " run 
-nmap <Leader>rr :Dispatch !ruby %<CR>
-nmap <Leader>ro :!rubocop -a %<CR>
 nmap <Leader>rj :%!python -m json.tool<CR>
 nmap <Leader>rt :!ctags -R --exclude=.git --exclude=log *<CR>
-
-" test (rspec) 
-let g:rspec_command = "Dispatch rspec {spec}"
-map <Leader>tf :call RunCurrentSpecFile()<CR>
-map <Leader>tt :call RunNearestSpec()<CR>
-map <Leader>tl :call RunLastSpec()<CR>
-map <Leader>ta :call RunAllSpecs()<CR>
 
 " Plugin settings 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

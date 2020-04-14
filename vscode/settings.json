@@ -1,0 +1,62 @@
+{
+    "editor.minimap.enabled": true,
+    "workbench.colorTheme": "ReUI Default Bordered (react)",
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "workbench.colorCustomizations": {
+        "editor.lineHighlightBorder": "#ff6600",
+        "editor.lineHighlightBackground": "#272822",
+        "tab.activeBorder": "#ff6600",
+        "tab.unfocusedActiveBorder": "#000000"
+    },
+    "editor.fontSize": 10,
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "none",
+    "editor.renderControlCharacters": false,
+    "breadcrumbs.enabled": true,
+    "gitlens.mode.active": "zen",
+    "editor.suggestSelection": "first",
+    "vim.useCtrlKeys": false, 
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "vim.handleKeys": {
+        "<C-d>": false 
+    },
+    "window.zoomLevel": 1,
+    "workbench.editor.enablePreview": false,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "terminal.integrated.commandsToSkipShell": [
+        "editor.action.toggleTabFocusMode",
+        "workbench.action.quickOpen",
+        "workbench.action.showCommands",
+        "workbench.action.terminal.copySelection",
+        "workbench.action.terminal.focus",
+        "workbench.action.terminal.focusNext",
+        "workbench.action.terminal.focusPrevious",
+        "workbench.action.terminal.kill",
+        "workbench.action.terminal.new",
+        "workbench.action.terminal.paste",
+        "workbench.action.terminal.runSelectedText",
+        "workbench.action.terminal.scrollDown",
+        "workbench.action.terminal.scrollUp",
+        "workbench.action.terminal.toggleTerminal",
+        "workbench.action.focusFirstEditorGroup"
+    ],
+    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.fontWeight": "600",
+    "terminal.integrated.fontWeightBold": "normal"
+
+}

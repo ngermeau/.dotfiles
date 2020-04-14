@@ -21,11 +21,11 @@ alias h='history'
 alias v='vim'
 alias g='git'
 alias yolo='git add . && git co' 
-
+alias e='exit'
 
 ##########################################################
 # PATH
-export PATH="~/Bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
+export PATH="/home/nicolas/Bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
 export PATH="$HOME/.rbenv/shims:$PATH"
 export NODE_PATH=$HOME/.npm-global/lib/node_modules/
 export NODE_BIN=$HOME/.npm-global/bin
@@ -33,11 +33,7 @@ export NODE_BIN=$HOME/.npm-global/bin
 ##########################################################
 # Z CONFIGURATION
 _Z_CMD="j" 
-. ~/Apps/z/z.sh
-
-##########################################################
-# PLUGINS
-plugins=(git heroku)
+. ~/Bin/z/z.sh
 
 ##########################################################
 # AUTOSUGGEST
