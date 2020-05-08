@@ -1,6 +1,5 @@
 {
-    "editor.minimap.enabled": true,
-    "workbench.colorTheme": "ReUI Default Bordered (react)",
+    "editor.minimap.enabled": false,
     "vim.insertModeKeyBindings": [
         {
             "before": [
@@ -12,15 +11,16 @@
             ]
         }
     ],
+    "vim.useSystemClipboard": true,
     "workbench.colorCustomizations": {
         "editor.lineHighlightBorder": "#ff6600",
         "editor.lineHighlightBackground": "#272822",
         "tab.activeBorder": "#ff6600",
         "tab.unfocusedActiveBorder": "#000000"
     },
-    "editor.fontSize": 10,
+    "editor.fontSize": 12,
     "editor.tabSize": 2,
-    "editor.renderWhitespace": "none",
+    "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": false,
     "breadcrumbs.enabled": true,
     "gitlens.mode.active": "zen",
@@ -57,6 +57,14 @@
     ],
     "terminal.integrated.fontSize": 12,
     "terminal.integrated.fontWeight": "600",
-    "terminal.integrated.fontWeightBold": "normal"
-
+    "terminal.integrated.fontWeightBold": "normal",
+    "files.autoSave": "afterDelay",
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\bash.exe",
+    "workbench.colorTheme": "ReUI Default Bordered (react)",
+    "zenMode.hideLineNumbers": false,
+    "zenMode.hideStatusBar": false,
+    "workbench.statusBar.visible": true,
+    "java.requirements.JDK11Warning": false,
+    "editor.wordWrap": "on",
+    "java.semanticHighlighting.enabled": true
 }
