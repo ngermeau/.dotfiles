@@ -16,6 +16,7 @@ call vundle#end()
 " Coding preferences 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on                                                   "enable highlighting for syntax
+colorscheme molokai
 set tabstop=2                                               "number of spaces when <TAB> character is encountered when opening a file
 set softtabstop=2                                           "in insert mode, number of spaces that is inserted when you hit <TAB>
 set expandtab                                               "spaces are used when tabbing 
