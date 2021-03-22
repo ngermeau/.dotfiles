@@ -1,22 +1,28 @@
 set nocompatible              
-"filetype off                  
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'w0rp/ale'
-Plugin 'tpope/vim-fugitive'
-Plugin 'mattn/emmet-vim'
+filetype off                  
+call plug#begin('~/.vim/plugged')
 
-call vundle#end()            
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'dense-analysis/ale'
+Plug 'vim-airline/vim-airline'
+
+"Plugin 'VundleVim/Vundle.vim'
+"Plugin 'tpope/vim-surround'
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'mattn/emmet-vim'
+
+call plug#end()
+
 " Coding preferences 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on                                                   "enable highlighting for syntax
-colorscheme molokai
+set shell=/bin/bash
+colorscheme onehalfdark
+
 set tabstop=2                                               "number of spaces when <TAB> character is encountered when opening a file
 set softtabstop=2                                           "in insert mode, number of spaces that is inserted when you hit <TAB>
 set expandtab                                               "spaces are used when tabbing 
@@ -79,7 +85,7 @@ nmap j gj
 " nmap <Leader>/ :nohl<CR>
 
 " panel nav 
-map <C-m> :CtrlP<CR>
+map <C-m> :Files<CR>
 map <C-y> :CtrlPBuffer<CR>
 map <C-n> :CtrlPBufTag<CR>
 map <C-g> :NERDTreeToggle<CR>
@@ -133,4 +139,4 @@ augroup myvimrc
 augroup END
 
 " format xml when opened
-au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
+" au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"

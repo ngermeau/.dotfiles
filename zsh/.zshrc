@@ -39,3 +39,5 @@ _Z_CMD="j"
 # AUTOSUGGEST
 bindkey '^n' autosuggest-accept
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

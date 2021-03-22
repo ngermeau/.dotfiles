@@ -1,2 +1,4 @@
 xmodmap -e 'keycode 108 = Control_R' && xmodmap -e 'add Control = Control_R'
 keycode  66 = Shift_L NoSymbol Shift_L
+xmodmap -e 'keycode 108 = Control_R' && xmodmap -e 'add Control = Control_R'
+
