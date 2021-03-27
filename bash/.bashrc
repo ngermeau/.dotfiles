@@ -3,7 +3,6 @@ export OSH=/home/nicolas/.oh-my-bash
 OSH_THEME="font"
 export PATH="$PATH:/opt/mssql-tools/bin"
 #source "$HOME/.bashrc"
-export FZF_DEFAULT_COMMAND='find .'
 export TERM="xterm-256color"
 PATH=$PATH:~/Bin
 export PATH=$PATH:/usr/local/go/bin
@@ -17,8 +16,10 @@ set -o vi
 _Z_CMD="j"
 . ~/Bin/z/z.sh
 
+~/Bin/remap.sh
 # allow C-s and other in vim
 stty -ixon
+
 
 
 #alias
