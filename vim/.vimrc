@@ -9,10 +9,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'
+Plug 'junegunn/goyo.vim'
+Plug 'tpope/vim-fugitive'
 
-"Plugin 'VundleVim/Vundle.vim'
 "Plugin 'tpope/vim-surround'
-"Plugin 'tpope/vim-fugitive'
 "Plugin 'mattn/emmet-vim'
 
 call plug#end()
@@ -84,41 +84,32 @@ nmap j gj
 " vmap <Leader>, "*y 
 " nmap <Leader>/ :nohl<CR>
 
-" panel nav 
-map <C-m> :Files<CR>
-map <C-y> :CtrlPBuffer<CR>
-map <C-n> :CtrlPBufTag<CR>
-map <C-g> :NERDTreeToggle<CR>
-
 " splits nav
 map <C-h> <C-w><C-h>
 map <C-j> <C-w><C-j>
 map <C-k> <C-w><C-k>
 map <C-l> <C-w><C-l>
 
-" git 
-map <leader>iw :Gwrite<CR>
-map <leader>ic :Gcommit<CR>
+" Code navigation access
+map <C-m> :Files<CR>
+map <C-n> :Buffers<CR>
+map <C-g> :NERDTreeToggle<CR>
 
-" direct files access 
+" leaders 
+map <leader>f :Ag<CR>
+map <leader>y :Goyo<CR>
+map <leader>s :Gstatus<CR>
+map <leader>p :Gpush<CR>
+
 nmap <Leader>fv :e $MYVIMRC<CR>
-
-" run 
 nmap <Leader>rj :%!python -m json.tool<CR>
 nmap <Leader>rt :!ctags -R --exclude=.git --exclude=log *<CR>
 
 " Plugin settings 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ctrlp 
-let g:ctrlp_custom_ignore= 'node_modules\|DS_Store\|git\|target\|log\|vendor\|_site\|tmp'
-let g:ctrlp_match_window= 'bottom,order:ttb,min:1,max:10,results:10'
-let g:ctrlp_working_path_mode = 0                
 
 " ctags 
 set tags=./tags;
-
-" emmet
-let g:user_emmet_expandabbr_key = '<C-y>'
 
 " ale
 let g:ale_sign_column_always = 1

@@ -20,6 +20,7 @@ _Z_CMD="j"
 # allow C-s and other in vim
 stty -ixon
 
+alias h=history
 
 
 #alias
