@@ -3,23 +3,18 @@ set nocompatible
 language en_US
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'w0rp/ale'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-airline/vim-airline'
-Plugin 'prabirshrestha/async.vim'
-Plugin 'prabirshrestha/vim-lsp'
-Plugin 'mattn/vim-lsp-settings'
-Plugin 'Brettm12345/moonlight.vim'
-
-call vundle#end()            
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'dense-analysis/ale'
+Plug 'vim-airline/vim-airline'
+Plug 'junegunn/goyo.vim'
+Plug 'Brettm12345/moonlight.vim'
+Plug 'tpope/vim-fugitive'
 " look at startify for neovim
+
+call plug#end()
 
 " Coding preferences 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -78,8 +73,8 @@ let mapleader = "\<space>"
 
 " usual stuff 
 imap jj <esc>
+map <C-w> <C-w>c
 map <C-s> :w<CR>
-imap <C-u> <Esc>:w<CR>
 map <C-q> :q!<CR>
 nmap k gk
 nmap j gj
@@ -88,14 +83,12 @@ nmap j gj
 " nmap <Leader>/ :nohl<CR>
 
 " panel nav 
-map <C-m> :CtrlP<CR>
-" map <C-m> :CtrlPBuffer<CR>
+map <C-m> :Files<CR>
+map <C-u> :Buffers<CR>
 map <C-g> :NERDTreeToggle<CR>
 
 " splits nav
 map <C-h> <C-w><C-h>
-map <C-j> <C-w><C-j>
-map <C-k> <C-w><C-k>
 map <C-l> <C-w><C-l>
 tnoremap <C-h> <C-\><C-n><C-w>h
 tnoremap <C-j> <C-\><C-n><C-w>j
@@ -107,38 +100,19 @@ tnoremap <C-q> :q!<CR>
 nmap <C-a><C-v> :vsplit term://bash<CR>
 map <C-a><C-x> :split term://bash<CR>
 
-" git 
-map <leader>iw :Gwrite<CR>
-map <leader>ic :Gcommit<CR>
-
 " direct files access 
 nmap <Leader>fv :e $MYVIMRC<CR>
 
 " run 
 nmap <Leader>rr :Dispatch !ruby %<CR>
-nmap <Leader>ro :!rubocop -a %<CR>
 nmap <Leader>rj :%!python -m json.tool<CR>
 nmap <Leader>rt :!ctags -R --exclude=.git --exclude=log *<CR>
 
-" test (rspec) 
-let g:rspec_command = "Dispatch rspec {spec}"
-map <Leader>tf :call RunCurrentSpecFile()<CR>
-map <Leader>tt :call RunNearestSpec()<CR>
-map <Leader>tl :call RunLastSpec()<CR>
-map <Leader>ta :call RunAllSpecs()<CR>
 
 " Plugin settings 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ctrlp 
-let g:ctrlp_custom_ignore= 'node_modules\|DS_Store\|git\|target\|log\|vendor\|_site\|tmp'
-let g:ctrlp_match_window= 'bottom,order:ttb,min:1,max:10,results:10'
-let g:ctrlp_working_path_mode = 0                
-
 " ctags 
 set tags=./tags;
-
-" emmet
-let g:user_emmet_expandabbr_key = '<C-y>'
 
 " ale
 let g:ale_sign_column_always = 1
