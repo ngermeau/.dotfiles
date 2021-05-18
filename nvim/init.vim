@@ -5,9 +5,9 @@ language en_US
 set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
+Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/goyo.vim'
 Plug 'Brettm12345/moonlight.vim'
@@ -66,42 +66,40 @@ set nojoinspaces                                            "punctuation
 set autoread                                                "load if changed
 set splitbelow 
 set splitright 
+set clipboard+=unnamedplus                                  "yank into clipboard
 
 " Key mappins  
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let mapleader = "\<space>"
 
 " usual stuff 
+let mapleader = ","
+
 imap jj <esc>
-map <C-w> <C-w>c
 map <C-s> :w<CR>
-map <C-q> :q!<CR>
+map <C-d> :q<CR>
+map <C-q> :bd!<CR>
 nmap k gk
 nmap j gj
-" nmap <Leader>,, "*p 
-" vmap <Leader>, "*y 
-" nmap <Leader>/ :nohl<CR>
+map <Leader>v "+gp
 
 " panel nav 
-map <C-m> :Files<CR>
+map <C-m> :GFiles<CR>
 map <C-u> :Buffers<CR>
 map <C-g> :NERDTreeToggle<CR>
 
 " splits nav
-map <C-h> <C-w><C-h>
-map <C-l> <C-w><C-l>
-tnoremap <C-h> <C-\><C-n><C-w>h
-tnoremap <C-j> <C-\><C-n><C-w>j
-tnoremap <C-k> <C-\><C-n><C-w>k
-tnoremap <C-l> <C-\><C-n><C-w>l
-tnoremap <C-q> :q!<CR>
+map <C-h> <C-w>h
+map <C-l> <C-w>l
+map <C-j> <C-w>j
+map <C-k> <C-w>k
 
 " terminal 
 nmap <C-a><C-v> :vsplit term://bash<CR>
-map <C-a><C-x> :split term://bash<CR>
+nmap <C-a><C-x> :split term://bash<CR>
 
 " direct files access 
 nmap <Leader>fv :e $MYVIMRC<CR>
+nmap <Leader>ft :e ~/.dotfiles/todo.md<CR>
 
 " run 
 nmap <Leader>rr :Dispatch !ruby %<CR>
@@ -122,7 +120,7 @@ let g:ale_sign_column_always = 1
 " source vimrc when file is saved 
 augroup autosourcing
   autocmd! 
-  autocmd BufWritePost .vimrc source %
+  autocmd BufWritePost init.vim source %
 augroup END
 
 " execute copen (quickfix window) when using grep
@@ -136,25 +134,3 @@ augroup END
 " au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
 
 
-if executable('java') && filereadable(expand('~/lsp/eclipse.jdt.ls/plugins/org.eclipse.equinox.launcher_1.5.600.v20191014-2022.jar'))
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'eclipse.jdt.ls',
-        \ 'cmd': {server_info->[
-        \     'java',
-        \     '-Declipse.application=org.eclipse.jdt.ls.core.id1',
-        \     '-Dosgi.bundles.defaultStartLevel=4',
-        \     '-Declipse.product=org.eclipse.jdt.ls.core.product',
-        \     '-Dlog.level=ALL',
-        \     '-noverify',
-        \     '-Dfile.encoding=UTF-8',
-        \     '-Xmx1G',
-        \     '-jar',
-        \     expand('~/lsp/eclipse.jdt.ls/plugins/org.eclipse.equinox.launcher_1.5.600.v20191014-2022.jar'),
-        \     '-configuration',
-        \     expand('~/lsp/eclipse.jdt.ls/config_win'),
-        \     '-data',
-        \     getcwd()
-        \ ]},
-        \ 'whitelist': ['java'],
-        \ })
-endif

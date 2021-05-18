@@ -16,11 +16,15 @@ set -o vi
 _Z_CMD="j"
 . ~/Bin/z/z.sh
 
-~/Bin/remap.sh
 # allow C-s and other in vim
 stty -ixon
 
 alias h=history
+
+
+# Programming lan setup
+export JAVA_HOME=~/Bin/jdk1.8.0_291/
+export PATH=$JAVA_HOME/bin:$PATH
 
 
 #alias
