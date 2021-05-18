@@ -8,10 +8,11 @@ Plug 'scrooloose/nerdtree'
 Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim' 
 Plug 'junegunn/goyo.vim'
 Plug 'Brettm12345/moonlight.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " look at startify for neovim
 
 call plug#end()
@@ -76,8 +77,8 @@ let mapleader = ","
 
 imap jj <esc>
 map <C-s> :w<CR>
-map <C-d> :q<CR>
-map <C-q> :bd!<CR>
+map <C-d> :bd!<CR>
+map <C-q> :q<CR>
 nmap k gk
 nmap j gj
 map <Leader>v "+gp
@@ -96,6 +97,7 @@ map <C-k> <C-w>k
 " terminal 
 nmap <C-a><C-v> :vsplit term://bash<CR>
 nmap <C-a><C-x> :split term://bash<CR>
+tnoremap <C-l> <C-\><C-n> 
 
 " direct files access 
 nmap <Leader>fv :e $MYVIMRC<CR>
@@ -114,6 +116,9 @@ set tags=./tags;
 
 " ale
 let g:ale_sign_column_always = 1
+
+" lightline 
+let g:lightline = { 'colorscheme' : 'moonlight' } 
 
 " Auto commmand 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
