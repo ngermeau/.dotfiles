@@ -1,17 +1,18 @@
 
 set nocompatible              
+language en_US
 
+set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
-Plug 'dense-analysis/ale'
+"" Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim' 
 Plug 'junegunn/goyo.vim'
 Plug 'Brettm12345/moonlight.vim'
-Plug 'tpope/vim-commentary'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'mhinz/vim-startify'
+Plug 'tpope/vim-fugitive'
+ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " look at startify for neovim
 
 call plug#end()
@@ -32,7 +33,6 @@ set matchtime=3                                             "set display duratio
 set noswapfile                                              "no swap file created when opening a file
 set hidden                                                  "allow unsaved buffers 
 set history=10000                                           "command line history size
-set autochdir                                               "change root folder based on the file you are currently editing
 
 " Search 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -78,50 +78,50 @@ let mapleader = ","
 imap jj <esc>
 map <C-s> :w<CR>
 map <C-d> :bd!<CR>
-map <C-q> :q<CR>
+map <C-w> :q<CR>
 nmap k gk
 nmap j gj
 map <Leader>v "+gp
 
 " panel nav 
-map <C-m> :GFiles<CR>
-map <C-u> :Buffers<CR>
+map <C-m><C-j> :GFiles<CR>
+map <C-m><C-m> :Buffers<CR>
 map <C-g> :NERDTreeToggle<CR>
 
 " splits nav
-map <C-h> <C-w>h
-map <C-l> <C-w>l
-map <C-j> <C-w>j
-map <C-k> <C-w>k
+noremap <C-h> <C-w>h
+noremap <C-l> <C-w>l
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
 
 " terminal 
 nmap <C-a><C-v> :vsplit term://bash<CR>
 nmap <C-a><C-x> :split term://bash<CR>
 tnoremap <C-l> <C-\><C-n> 
 
-" git
-map <Leader>gg :Git<CR>
-map <Leader>gp :Git push<CR>
-
 " direct files access 
 nmap <Leader>fv :e $MYVIMRC<CR>
 nmap <Leader>ft :e ~/.dotfiles/todo.md<CR>
 
 " run 
-nmap <Leader>rj :%!python -m json.tool<CR>
 nmap <Leader>rt :!ctags -R --exclude=.git --exclude=log *<CR>
 
+" coc
+nmap <C-u><C-u> <Plug>(coc-definition)
+nmap <C-u><C-j> <Plug>(coc-references) 
+nmap <C-u><C-i> <Plug>(coc-codeaction) 
+nmap <C-u><C-y> <Plug>(coc-codelens-action)  
 
 " Plugin settings 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ctags 
+set tags=./tags;
+
 " ale
 let g:ale_sign_column_always = 1
 
 " lightline 
 let g:lightline = { 'colorscheme' : 'moonlight' } 
-
-" vim commentary 
-vmap <C-/>gc
 
 " Auto commmand 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -140,7 +140,3 @@ augroup END
 
 " format xml when opened
 " au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
-
-
-autocmd BufWinEnter,WinEnter term://* startinsert "always start terminal in insert mode 
-
