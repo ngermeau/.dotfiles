@@ -1,8 +1,6 @@
 
 set nocompatible              
-language en_US
 
-set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'dense-analysis/ale'
@@ -11,8 +9,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim' 
 Plug 'junegunn/goyo.vim'
 Plug 'Brettm12345/moonlight.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-commentary'
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'mhinz/vim-startify'
 " look at startify for neovim
 
 call plug#end()
@@ -33,6 +32,7 @@ set matchtime=3                                             "set display duratio
 set noswapfile                                              "no swap file created when opening a file
 set hidden                                                  "allow unsaved buffers 
 set history=10000                                           "command line history size
+set autochdir                                               "change root folder based on the file you are currently editing
 
 " Search 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -99,26 +99,29 @@ nmap <C-a><C-v> :vsplit term://bash<CR>
 nmap <C-a><C-x> :split term://bash<CR>
 tnoremap <C-l> <C-\><C-n> 
 
+" git
+map <Leader>gg :Git<CR>
+map <Leader>gp :Git push<CR>
+
 " direct files access 
 nmap <Leader>fv :e $MYVIMRC<CR>
 nmap <Leader>ft :e ~/.dotfiles/todo.md<CR>
 
 " run 
-nmap <Leader>rr :Dispatch !ruby %<CR>
 nmap <Leader>rj :%!python -m json.tool<CR>
 nmap <Leader>rt :!ctags -R --exclude=.git --exclude=log *<CR>
 
 
 " Plugin settings 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ctags 
-set tags=./tags;
-
 " ale
 let g:ale_sign_column_always = 1
 
 " lightline 
 let g:lightline = { 'colorscheme' : 'moonlight' } 
+
+" vim commentary 
+vmap <C-/>gc
 
 " Auto commmand 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -138,4 +141,6 @@ augroup END
 " format xml when opened
 " au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
 
+
+autocmd BufWinEnter,WinEnter term://* startinsert "always start terminal in insert mode 
 
