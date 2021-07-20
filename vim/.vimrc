@@ -1,28 +1,25 @@
+
 set nocompatible              
-filetype off                  
+language en_US
+
+set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin('~/.vim/plugged')
-
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'scrooloose/nerdtree'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'dense-analysis/ale'
-Plug 'vim-airline/vim-airline'
+Plug 'kien/ctrlp.vim'
+" Plug 'itchyny/lightline.vim' 
 Plug 'junegunn/goyo.vim'
+Plug 'Brettm12345/moonlight.vim'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-fugitive'
-
-"Plugin 'tpope/vim-surround'
-"Plugin 'mattn/emmet-vim'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" look at startify for neovim
 
 call plug#end()
 
 " Coding preferences 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype on
 syntax on                                                   "enable highlighting for syntax
-set shell=/bin/bash
-colorscheme onehalfdark
-
 set tabstop=2                                               "number of spaces when <TAB> character is encountered when opening a file
 set softtabstop=2                                           "in insert mode, number of spaces that is inserted when you hit <TAB>
 set expandtab                                               "spaces are used when tabbing 
@@ -44,7 +41,8 @@ set ignorecase smartcase                                    "make searches case-
 
 " UI preferences 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set colorcolumn=100
+set background=dark
+colorscheme moonlight
 set showcmd                                                 "show command in bottom bar
 set wildmenu                                                "visual autocomplete for command menu
 set cursorline                                              "highlight current line
@@ -68,58 +66,75 @@ set nojoinspaces                                            "punctuation
 set autoread                                                "load if changed
 set splitbelow 
 set splitright 
+set clipboard+=unnamedplus                                  "yank into clipboard
 
 " Key mappins  
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let mapleader = "\<space>"
 
 " usual stuff 
+let mapleader = ","
+
 imap jj <esc>
-map <C-u> :w<CR>
-imap <C-u> <Esc>:w<CR>
-map <C-q> :q!<CR>
+map <C-s> :w<CR>
+map <C-d> :bd!<CR>
+map <C-w> :q<CR>
 nmap k gk
 nmap j gj
-" nmap <Leader>,, "*p 
-" vmap <Leader>, "*y 
-" nmap <Leader>/ :nohl<CR>
+map <Leader>v "+gp
 
-" splits nav
-map <C-h> <C-w><C-h>
-map <C-j> <C-w><C-j>
-map <C-k> <C-w><C-k>
-map <C-l> <C-w><C-l>
-
-" Code navigation access
-map <C-m> :Files<CR>
-map <C-n> :Buffers<CR>
+" panel nav 
+map <C-m><C-j> :CtrlP<CR>
+map <C-m><C-m> :CtrlPBuffer<CR>
 map <C-g> :NERDTreeToggle<CR>
 
-" leaders 
-map <leader>f :Ag<CR>
-map <leader>y :Goyo<CR>
-map <leader>s :Gstatus<CR>
-map <leader>p :Gpush<CR>
+" splits nav
+noremap <C-h> <C-w>h
+noremap <C-l> <C-w>l
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
 
+" terminal 
+nmap <C-a><C-v> :vsplit term://bash<CR>
+nmap <C-a><C-x> :split term://bash<CR>
+" tnoremap <C-l> <C-\><C-n> 
+
+" direct files access 
 nmap <Leader>fv :e $MYVIMRC<CR>
-nmap <Leader>rj :%!python -m json.tool<CR>
+nmap <Leader>ft :e ~/.dotfiles/todo.md<CR>
+
+" run 
 nmap <Leader>rt :!ctags -R --exclude=.git --exclude=log *<CR>
 
+" coc
+nmap <C-u><C-u> <Plug>(coc-definition)
+nmap <C-u><C-j> <Plug>(coc-references) 
+nmap <C-u><C-i> <Plug>(coc-codeaction) 
+nmap <C-u><C-y> <Plug>(coc-codelens-action)  
 " Plugin settings 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " ctags 
 set tags=./tags;
 
 " ale
 let g:ale_sign_column_always = 1
 
+" lightline 
+let g:lightline = { 'colorscheme' : 'moonlight',
+                  \ 'active': {
+                  \   'left': [ [ 'mode', 'paste' ],
+                  \             [ 'readonly', 'filename', 'modified', 'gitbranch' ] ]
+                  \ },
+                  \ 'component': {
+                  \   'gitbranch': 'FugitiveHead'
+                  \ },
+                  \ } 
+
 " Auto commmand 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " source vimrc when file is saved 
 augroup autosourcing
   autocmd! 
-  autocmd BufWritePost .vimrc source %
+  autocmd BufWritePost init.vim source %
 augroup END
 
 " execute copen (quickfix window) when using grep
@@ -131,3 +146,4 @@ augroup END
 
 " format xml when opened
 " au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
+
