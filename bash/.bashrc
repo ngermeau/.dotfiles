@@ -17,6 +17,7 @@ _Z_CMD="j"
 . ~/Bin/z/z.sh
 
 alias h=history
+alias e=exit
 
 
 # Programming lan setup

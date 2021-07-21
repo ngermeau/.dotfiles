@@ -91,11 +91,6 @@ noremap <C-l> <C-w>l
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 
-" terminal 
-nmap <C-a><C-v> :vsplit term://bash<CR>
-nmap <C-a><C-x> :split term://bash<CR>
-" tnoremap <C-l> <C-\><C-n> 
-
 " direct files access 
 nmap <Leader>fv :e $MYVIMRC<CR>
 nmap <Leader>ft :e ~/.dotfiles/todo.md<CR>
