@@ -10,7 +10,7 @@ Plug 'Brettm12345/moonlight.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" look at startify for neovim
+" look at startify for neovim 
 
 call plug#end()
 
