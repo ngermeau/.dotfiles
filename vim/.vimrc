@@ -1,17 +1,15 @@
-
 set nocompatible              
-language en_US
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
-" Plug 'itchyny/lightline.vim' 
+Plug 'itchyny/lightline.vim' 
 Plug 'junegunn/goyo.vim'
 Plug 'Brettm12345/moonlight.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-fugitive'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " look at startify for neovim
 
 call plug#end()
