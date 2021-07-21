@@ -16,9 +16,6 @@ set -o vi
 _Z_CMD="j"
 . ~/Bin/z/z.sh
 
-# allow C-s and other in vim
-stty -ixon
-
 alias h=history
 
 
