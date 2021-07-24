@@ -10,7 +10,7 @@ Plug 'Brettm12345/moonlight.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" look at startify for neovim 
+Plug 'mhinz/vim-startify'
 
 call plug#end()
 
@@ -79,6 +79,7 @@ map <C-w> :q<CR>
 nmap k gk
 nmap j gj
 map <Leader>v "+gp
+map <Leader>c "+y
 
 " panel nav 
 map <C-m><C-j> :CtrlP<CR>
@@ -107,6 +108,8 @@ nmap <C-u><C-y> <Plug>(coc-codelens-action)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ctags 
 set tags=./tags;
+
+let g:ctrlp_use_caching = 0
 
 " ale
 let g:ale_sign_column_always = 1
