@@ -4,19 +4,19 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
-Plug 'itchyny/lightline.vim' 
 Plug 'junegunn/goyo.vim'
-Plug 'Brettm12345/moonlight.vim'
+Plug 'morhetz/gruvbox'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-fugitive'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'dense-analysis/ale'
 Plug 'mhinz/vim-startify'
-
 call plug#end()
 
 " Coding preferences 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype on
+colorscheme gruvbox
+set background=dark
 syntax on                                                   "enable highlighting for syntax
 set tabstop=2                                               "number of spaces when <TAB> character is encountered when opening a file
 set softtabstop=2                                           "in insert mode, number of spaces that is inserted when you hit <TAB>
@@ -39,8 +39,6 @@ set ignorecase smartcase                                    "make searches case-
 
 " UI preferences 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set background=dark
-colorscheme moonlight
 set showcmd                                                 "show command in bottom bar
 set wildmenu                                                "visual autocomplete for command menu
 set cursorline                                              "highlight current line
@@ -82,8 +80,8 @@ map <Leader>v "+gp
 map <Leader>c "+y
 
 " panel nav 
-map <C-m><C-j> :CtrlP<CR>
-map <C-m><C-m> :CtrlPBuffer<CR>
+map <C-u> :CtrlP<CR>
+map <C-m> :CtrlPBuffer<CR>
 map <C-g> :NERDTreeToggle<CR>
 
 " splits nav
@@ -114,16 +112,9 @@ let g:ctrlp_use_caching = 0
 " ale
 let g:ale_sign_column_always = 1
 
-" lightline 
-let g:lightline = { 'colorscheme' : 'moonlight',
-                  \ 'active': {
-                  \   'left': [ [ 'mode', 'paste' ],
-                  \             [ 'readonly', 'filename', 'modified', 'gitbranch' ] ]
-                  \ },
-                  \ 'component': {
-                  \   'gitbranch': 'FugitiveHead'
-                  \ },
-                  \ } 
+" lightline
+let g:lightline = {}
+let g:lightline.colorscheme = 'gruvbox'
 
 " Auto commmand 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
