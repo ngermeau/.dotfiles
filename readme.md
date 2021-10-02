@@ -4,9 +4,8 @@
 
 ## Todo's
 
-- [ ] .bashrc not sourced properly (not able to use Z)
-- [ ] ctags in vim for jumping
-- [ ] searching in a project in vim 
-- [ ] Changing font of terminal   
+- [x] PS1 in oh-my-bash not displayed properly  
+- [x] ctrlp in vim is slow when looking for a file 
+- [ ] .bashrc not sourced properly (not able to use Z), maybe z not attached to current shell
+- [ ] lsp support for java 
 - [ ] alacritty in vim mode  
-- [ ] PS1 in oh-my-bash not displayed properly  

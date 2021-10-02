@@ -48,7 +48,6 @@ bell:
 shell:
   program: /usr/bin/tmux  
 
-
 mouse:
   hide_when_typing: true
 

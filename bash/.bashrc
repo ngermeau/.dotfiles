@@ -1,6 +1,6 @@
 # Oh-my-bash Setup
 export OSH=/home/jax/.oh-my-bash
-OSH_THEME="garo"
+OSH_THEME="pure"                            # Oh-my-bash theme
 DISABLE_UNTRACKED_FILES_DIRTY="true"        # Avoid marking untracked files as dirty (performance)
 source $OSH/oh-my-bash.sh
 
@@ -33,3 +33,5 @@ _Z_CMD="j"                                  # Z Configuration
 # Alias 
 alias h=history
 alias e=exit
+alias src=". ~/.bashrc"
+

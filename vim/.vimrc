@@ -42,7 +42,7 @@ set ignorecase smartcase                                    "make searches case-
 set showcmd                                                 "show command in bottom bar
 set wildmenu                                                "visual autocomplete for command menu
 set cursorline                                              "highlight current line
-set cmdheight=2                                             "vim command line height 
+set cmdheight=1                                             "vim command line height 
 set laststatus=2                                            "always display status line 
 set ruler                                                   "display line/column number left bottom  
 set lazyredraw                                              "redraw only when we need to.
@@ -92,22 +92,11 @@ noremap <C-k> <C-w>k
 
 " direct files access 
 nmap <Leader>fv :e $MYVIMRC<CR>
-nmap <Leader>ft :e ~/.dotfiles/todo.md<CR>
 
-" run 
-nmap <Leader>rt :!ctags -R --exclude=.git --exclude=log *<CR>
-
-" coc
-nmap <C-u><C-u> <Plug>(coc-definition)
-nmap <C-u><C-j> <Plug>(coc-references) 
-nmap <C-u><C-i> <Plug>(coc-codeaction) 
-nmap <C-u><C-y> <Plug>(coc-codelens-action)  
 " Plugin settings 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ctags 
-set tags=./tags;
-
-let g:ctrlp_use_caching = 0
+" ctrlp 
+let g:ctrlp_use_caching = 1
 
 " ale
 let g:ale_sign_column_always = 1
@@ -115,6 +104,7 @@ let g:ale_sign_column_always = 1
 " lightline
 let g:lightline = {}
 let g:lightline.colorscheme = 'gruvbox'
+
 
 " Auto commmand 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
