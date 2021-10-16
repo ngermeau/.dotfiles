@@ -104,23 +104,3 @@ let g:ale_sign_column_always = 1
 " lightline
 let g:lightline = {}
 let g:lightline.colorscheme = 'gruvbox'
-
-
-" Auto commmand 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" source vimrc when file is saved 
-augroup autosourcing
-  autocmd! 
-  autocmd BufWritePost init.vim source %
-augroup END
-
-" execute copen (quickfix window) when using grep
-augroup myvimrc
-    autocmd!
-    autocmd QuickFixCmdPost [^l]* cwindow
-    autocmd QuickFixCmdPost l*    lwindow
-augroup END
-
-" format xml when opened
-" au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
-

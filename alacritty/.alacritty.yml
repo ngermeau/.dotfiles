@@ -46,7 +46,7 @@ bell:
   duration: 0
 
 shell:
-  program: /usr/bin/tmux  
+  program: /usr/bin/bash
 
 mouse:
   hide_when_typing: true
