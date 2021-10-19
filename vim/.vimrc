@@ -4,12 +4,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
-Plug 'junegunn/goyo.vim'
 Plug 'morhetz/gruvbox'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'tpope/vim-fugitive'
-Plug 'dense-analysis/ale'
-Plug 'mhinz/vim-startify'
 call plug#end()
 
 " Coding preferences 
@@ -81,7 +77,6 @@ map <Leader>c "+y
 
 " panel nav 
 map <C-u> :CtrlP<CR>
-map <C-m> :CtrlPBuffer<CR>
 map <C-g> :NERDTreeToggle<CR>
 
 " splits nav
@@ -89,18 +84,3 @@ noremap <C-h> <C-w>h
 noremap <C-l> <C-w>l
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
-
-" direct files access 
-nmap <Leader>fv :e $MYVIMRC<CR>
-
-" Plugin settings 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ctrlp 
-let g:ctrlp_use_caching = 1
-
-" ale
-let g:ale_sign_column_always = 1
-
-" lightline
-let g:lightline = {}
-let g:lightline.colorscheme = 'gruvbox'
