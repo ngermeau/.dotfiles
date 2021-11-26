@@ -1,4 +1,3 @@
-
 window:
   startup_mode: Maximized
   decorations: None 
@@ -45,12 +44,19 @@ bell:
   color: "0xffffff"
   duration: 0
 
-shell:
-  program: /usr/bin/bash
-
 mouse:
   hide_when_typing: true
 
 cursor:
   style: Block
   unfocused_hollow: true
+
+key_bindings:
+  - {key: A, mods: Command, chars: "\x01"}
+  - {key: B, mods: Command, chars: "\x02"}
+  - {key: C, mods: Command, chars: "\x03"}
+  - {key: F, mods: Command, chars: "\x06"}
+  - {key: J, mods: Command, chars: "\x0a"}
+  - {key: K, mods: Command, chars: "\x0b"}
+  - {key: H, mods: Command, chars: "\x08"}
+  - {key: L, mods: Command, chars: "\x0c"}

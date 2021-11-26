@@ -22,11 +22,11 @@ export MYBINS=~/.dotfiles/bin               # my usefull bins
 export JAVA_HOME=~/Bin/jdk1.8.0_291         # Java Home
 
 # Path
+export PATH=$PATH:/usr/local/bin            # Local/bins 
 export PATH=$PATH:/opt/mssql-tools/bin      # Mssql 
 export PATH=$PATH:~/Bin                     # My Tools
 export PATH=$PATH:$MYBINS                   # My Bins
 export PATH=$JAVA_HOME/bin:$PATH            # Java
-
 
 # Z Setup 
 export _Z_CMD="j"                           # Z Configuration
