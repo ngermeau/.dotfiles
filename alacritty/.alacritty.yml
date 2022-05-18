@@ -56,7 +56,8 @@ key_bindings:
   - {key: B, mods: Command, chars: "\x02"}
   - {key: C, mods: Command, chars: "\x03"}
   - {key: F, mods: Command, chars: "\x06"}
+  - {key: H, mods: Command, chars: "\x08"}
   - {key: J, mods: Command, chars: "\x0a"}
   - {key: K, mods: Command, chars: "\x0b"}
-  - {key: H, mods: Command, chars: "\x08"}
   - {key: L, mods: Command, chars: "\x0c"}
+  - {key: N, mods: Command, chars: "\x0e"}
