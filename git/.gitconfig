@@ -1,6 +1,6 @@
 [user]
 	name = Nicolas Germeau
-	email = nicolas.germeau@gmail.com
+	email = ngermeau@icloud.com
 
 [color]
   ui = auto
@@ -10,13 +10,6 @@
   co = commit --verbose
   ch = checkout
   chb= checkout -b
-  di = diff
-  dic = diff --cached
-  coa = commit --amend
-
-[merge]
-  tool = vimdiff [filter "lfs"]
-  trustExitCode = true
 
 [credential]
   helper = cache

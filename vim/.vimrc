@@ -2,8 +2,6 @@ set nocompatible
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree'
-Plug 'kien/ctrlp.vim'
 Plug 'morhetz/gruvbox'
 Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
@@ -76,7 +74,6 @@ map <Leader>v "+gp
 map <Leader>c "+y
 
 " panel nav 
-map <C-u> :CtrlP<CR>
 map <C-g> :NERDTreeToggle<CR>
 
 " splits nav
