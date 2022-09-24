@@ -56,7 +56,7 @@ set nojoinspaces                                            "punctuation
 set autoread                                                "load if changed
 set splitbelow 
 set splitright 
-set clipboard+=unnamedplus                                  "yank into clipboard
+set clipboard=unnamed                                      "yank into clipboard
 
 " Key mappins  
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -68,13 +68,11 @@ imap jj <esc>
 map <C-s> :w<CR>
 map <C-d> :bd!<CR>
 map <C-w> :q<CR>
-nmap k gk
+map k gk
 nmap j gj
-map <Leader>v "+gp
-map <Leader>c "+y
 
 " panel nav 
-map <C-g> :NERDTreeToggle<CR>
+map <C-p> :NERDTreeToggle<CR>
 
 " splits nav
 noremap <C-h> <C-w>h

@@ -20,7 +20,7 @@ bindkey -M viins 'jj' vi-cmd-mode
 alias h='history' 
 alias v='vim'
 alias g='git'
-alias yolo='git add . && git co' 
+alias yolo='git add . && git co -m "yolo" && git push origin main'
 alias e='exit'
 
 ##########################################################
@@ -39,5 +39,5 @@ _Z_CMD="j"
 bindkey '^n' autosuggest-accept
 source $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
