@@ -21,6 +21,7 @@ alias h='history'
 alias vim='nvim'
 alias v='nvim'
 alias g='git'
+alias gs='git status'
 alias yolo='git add . && git co -m "yolo" && git push origin main'
 alias e='exit'
 
