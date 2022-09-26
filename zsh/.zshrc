@@ -18,7 +18,8 @@ bindkey -M viins 'jj' vi-cmd-mode
 ##########################################################
 # ALIAS 
 alias h='history' 
-alias v='vim'
+alias vim='nvim'
+alias v='nvim'
 alias g='git'
 alias yolo='git add . && git co -m "yolo" && git push origin main'
 alias e='exit'
@@ -32,7 +33,7 @@ export NODE_BIN=$HOME/.npm-global/bin
 ##########################################################
 # Z CONFIGURATION
 _Z_CMD="j" 
-. ~/.dotfiles/bin/z.sh
+. ~/bin/z/z.sh
 
 ###########ss##############################################
 # AUTOSUGGST
