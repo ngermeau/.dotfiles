@@ -16,30 +16,36 @@ scrolling:
 shell: 
   program: /usr/local/bin/tmux
 
+font: 
+  size: 13
+
 colors:
+  # Default colors
   primary:
-    background: "#282828"
-    foreground: "#ebdbb2"
+    background: '0x1b2b34'
+    foreground: '0xd8dee9'
 
+  # Normal colors
   normal:
-    black: "#282828"
-    red: "#cc241d"
-    green: "#98971a"
-    yellow: "#d79921"
-    blue: "#458588"
-    magenta: "#b16286"
-    cyan: "#689d6a"
-    white: "#a89984"
+    black:   '0x29414f'
+    red:     '0xec5f67'
+    green:   '0x99c794'
+    yellow:  '0xfac863'
+    blue:    '0x6699cc'
+    magenta: '0xc594c5'
+    cyan:    '0x5fb3b3'
+    white:   '0x65737e'
 
+  # Bright colors
   bright:
-    black: "#928374"
-    red: "#fb4934"
-    green: "#b8bb26"
-    yellow: "#fabd2f"
-    blue: "#83a598"
-    magenta: "#d3869b"
-    cyan: "#8ec07c"
-    white: "#ebdbb2"
+    black:   '0x405860'
+    red:     '0xec5f67'
+    green:   '0x99c794'
+    yellow:  '0xfac863'
+    blue:    '0x6699cc'
+    magenta: '0xc594c5'
+    cyan:    '0x5fb3b3'
+    white:   '0xadb5c0'
 
 bell:
   animation: EaseOutExpo
@@ -56,6 +62,7 @@ cursor:
 key_bindings:
   - {key: A, mods: Command, chars: "\x01"}
   - {key: B, mods: Command, chars: "\x02"}
+  - {key: C, mods: Command, chars: "\x03"}
   - {key: D, mods: Command, chars: "\x04"}
   - {key: E, mods: Command, chars: "\x05"}
   - {key: F, mods: Command, chars: "\x06"}
@@ -74,6 +81,8 @@ key_bindings:
   - {key: S, mods: Command, chars: "\x13"}
   - {key: T, mods: Command, chars: "\x14"}
   - {key: U, mods: Command, chars: "\x15"}
-  - {key: X, mods: Command, chars: "\x17"}
-  - {key: Y, mods: Command, chars: "\x18"}
-  - {key: Z, mods: Command, chars: "\x19"}
+  - {key: V, mods: Command, chars: "\x16"}
+  - {key: W, mods: Command, chars: "\x17"}
+  - {key: X, mods: Command, chars: "\x18"}
+  - {key: Y, mods: Command, chars: "\x19"}
+  - {key: Z, mods: Command, chars: "\x1a"}

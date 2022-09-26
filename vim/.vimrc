@@ -1,9 +1,9 @@
 set nocompatible              
 
-set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 " Coding preferences 
@@ -72,10 +72,12 @@ map k gk
 nmap j gj
 
 " panel nav 
-map <C-p> :NERDTreeToggle<CR>
+map <C-g> :NERDTreeToggle<CR>
 
 " splits nav
 noremap <C-h> <C-w>h
 noremap <C-l> <C-w>l
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
+
+
