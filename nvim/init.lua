@@ -8,6 +8,7 @@ Plug('preservim/nerdtree')
 Plug('tpope/vim-commentary')
 Plug('nvim-lua/plenary.nvim')
 Plug('nvim-telescope/telescope.nvim')
+Plug('nvim-treesitter/nvim-treesitter')
 vim.call('plug#end')
 
 -- UI --
@@ -33,17 +34,20 @@ vim.o.ignorecase = true                                     -- make searches cas
 
 -- MAPPING --
 --
-vim.g.mapleader = ","                                       -- leader key 
-vim.keymap.set('i','jj','<esc>')                            -- jj means escape (normal mode)
-vim.keymap.set({'n','i'},'<C-s>','<esc>:w<CR>')             -- go in normal mode and save 
-vim.keymap.set({'n','i'},'<C-w>','<esc>:q!<CR>')                        -- close window with C-w
-vim.keymap.set('n','<C-g>',':NERDTreeToggle<CR>')           -- call nerdtree shortcut
-vim.keymap.set({'n','i'},'<C-h>',':tatata<CR>')               -- navigate window left 
-vim.keymap.set('n','<C-l>','<C-w>l')                          -- navigate window right  
-vim.keymap.set({'n','i'},'<C-u>',':Telescope find_files<CR>')                        -- navigate window right  
--- noremap <C-l> <C-w>l
--- noremap <C-j> <C-w>j
--- noremap <C-k> <C-w>k
+vim.g.mapleader = ","                                                               -- leader key 
+vim.keymap.set('i','jj','<esc>')                                                    -- jj means escape (normal mode)
+vim.keymap.set({'n','i'},'<C-s>','<esc>:w<CR>')                                     -- go in normal mode and save 
+vim.keymap.set({'n','i'},'<C-w>','<esc>:q!<CR>')                                    -- close window with C-w
+vim.keymap.set('n','<C-l>','<C-w>l')                                                -- navigate window right  
+vim.keymap.set('n','<C-h>','<C-w>h')                                                -- navigate window left  
+vim.keymap.set('n','<C-j>','<C-w>j')                                                -- navigate window down
+vim.keymap.set('n','<C-k>','<C-w>k')                                                -- navigate window up  
+
+-- NERDTREE
+vim.keymap.set('n','<C-g>',':NERDTreeToggle<CR>')                                   -- call nerdtree shortcut
+
+-- TELESCOPE 
+vim.keymap.set({'n','i'},'<C-u>',':Telescope git_files<CR>')                        -- navigate window right  
 
 
 
