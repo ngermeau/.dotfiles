@@ -13,6 +13,7 @@ vim.call('plug#end')
 -- UI --
 --
 vim.o.background = 'dark'
+vim.o.relativenumber = true
 vim.cmd('colorscheme Material')
 
 
