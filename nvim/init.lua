@@ -8,7 +8,6 @@ Plug('preservim/nerdtree')
 Plug('tpope/vim-commentary')
 Plug('nvim-lua/plenary.nvim')
 Plug('nvim-telescope/telescope.nvim')
-Plug('nvim-treesitter/nvim-treesitter')
 vim.call('plug#end')
 
 -- UI --
@@ -20,16 +19,16 @@ vim.cmd('colorscheme Material')
 
 -- OPTIONS [https://neovim.io/doc/user/quickref.html#option-list] --
 --
-vim.o.number = true						                              -- display line numbers 
-vim.o.clipboard = "unnamed"					                        -- use the system clipboard for yank and paste
-vim.o.tabstop = 2                   				                -- number of spaces when <TAB> character is encountered when opening a file
-vim.o.softtabstop = 2                            	          -- in insert mode, number of spaces that is inserted when you hit <TAB>
-vim.o.expandtab = true                                     	-- spaces are used when tabbing 
-vim.o.shiftwidth = 2                                        -- how many columns text is indented with the reindent operations
-vim.o.autoindent = true                             	      -- autoindent the code  
-vim.o.swapfile = false                                      -- no swap file created when opening a file
-vim.o.hidden = true                                         -- allow unsaved buffers 
-vim.o.ignorecase = true                                     -- make searches case-sensitive only if they contain upper-case characters
+vim.o.number = true						                                                      -- display line numbers 
+vim.o.clipboard = "unnamed"					                                                -- use the system clipboard for yank and paste
+vim.o.tabstop = 2                   				                                        -- number of spaces when <TAB> character is encountered when opening a file
+vim.o.softtabstop = 2                            	                                  -- in insert mode, number of spaces that is inserted when you hit <TAB>
+vim.o.expandtab = true                                     	                        -- spaces are used when tabbing 
+vim.o.shiftwidth = 2                                                                -- how many columns text is indented with the reindent operations
+vim.o.autoindent = true                             	                              -- autoindent the code  
+vim.o.swapfile = false                                                              -- no swap file created when opening a file
+vim.o.hidden = true                                                                 -- allow unsaved buffers 
+vim.o.ignorecase = true                                                             -- make searches case-sensitive only if they contain upper-case characters
 
 
 -- MAPPING --
@@ -49,7 +48,8 @@ vim.keymap.set('n','<C-g>',':NERDTreeToggle<CR>')                               
 -- TELESCOPE 
 vim.keymap.set({'n','i'},'<C-u>',':Telescope git_files<CR>')                        -- navigate window right  
 
-
-
+-- FILES --
+--
+vim.keymap.set('n','<leader>fv',':e ~/.config/nvim/init.lua<CR>')
 
 
