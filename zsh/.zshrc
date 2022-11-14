@@ -1,7 +1,7 @@
 export ZSH=~/.oh-my-zsh
 export TERM="xterm-256color"
 
-ZSH_THEME="af-magic"
+ZSH_THEME="awesomepanda"
 source $ZSH/oh-my-zsh.sh
 
 #########################################################
@@ -41,5 +41,6 @@ _Z_CMD="j"
 bindkey '^n' autosuggest-accept
 source $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=magenta'
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
