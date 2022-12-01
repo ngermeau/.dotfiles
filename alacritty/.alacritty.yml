@@ -13,20 +13,18 @@ live_config_reload: true
 scrolling:
   history: 10000
 
-    #shell: 
-    #program: /usr/local/bin/tmux
+shell: 
+  program: /usr/local/bin/tmux
 
 font: 
   size: 15
   weight: 300
-# TokyoNight Alacritty Colors
-colors:
-  # Default colors
+
+colors:         #TokyoNight-Storm colors 
   primary:
     background: '0x24283b'
     foreground: '0xc0caf5'
 
-  # Normal colors
   normal:
     black:   '0x1d202f'
     red:     '0xf7768e'
@@ -37,7 +35,6 @@ colors:
     cyan:    '0x7dcfff'
     white:   '0xa9b1d6'
 
-  # Bright colors
   bright:
     black:   '0x414868'
     red:     '0xf7768e'
