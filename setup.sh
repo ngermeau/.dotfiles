@@ -10,9 +10,10 @@ ln -sf $DOTFILES_DIR/zsh/.zshrc ~/.zshrc
 #tmux
 ln -sf $DOTFILES_DIR/tmux/.tmux.conf ~/.tmux.conf
 
-# vim 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-ln -sf $DOTFILES_DIR/vim/.vimrc ~/.vimrc
+# astroNvim
+git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+mkdir ~/.config/nvim/lua/user/
+ln -sf $DOTFILES_DIR/nvim/init.lua ~/.config/nvim/user/init.lua
 
 #git 
 ln -sf $DOTFILES_DIR/git/.gitconfig ~/.gitconfig
