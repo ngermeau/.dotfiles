@@ -13,37 +13,35 @@ live_config_reload: true
 scrolling:
   history: 10000
 
-shell: 
-  program: /usr/local/bin/tmux
-
-font: 
-  size: 15
-  weight: 300
+font:
+  normal:
+    family: FuraMono Nerd Font Mono 
+  size: 14 
 
 colors:         #TokyoNight-Storm colors 
   primary:
-    background: '0x24283b'
-    foreground: '0xc0caf5'
+    background: '0x1e222a'
+    foreground: '0xabb2bf'
 
   normal:
-    black:   '0x1d202f'
-    red:     '0xf7768e'
-    green:   '0x9ece6a'
-    yellow:  '0xe0af68'
-    blue:    '0x7aa2f7'
-    magenta: '0xbb9af7'
-    cyan:    '0x7dcfff'
-    white:   '0xa9b1d6'
+    black:   '0x181a1f'
+    red:     '0xec5f67'
+    green:   '0x98c379'
+    yellow:  '0xe5c07b'
+    blue:    '0x40d9ff'
+    magenta: '0xa9a1e1'
+    cyan:    '0x56b6c2'
+    white:   '0xdedede'
 
   bright:
-    black:   '0x414868'
-    red:     '0xf7768e'
-    green:   '0x9ece6a'
-    yellow:  '0xe0af68'
-    blue:    '0x7aa2f7'
-    magenta: '0xbb9af7'
-    cyan:    '0x7dcfff'
-    white:   '0xc0caf5'
+    black:   '0x303742'
+    red:     '0xe9989e'
+    green:   '0x95be76'
+    yellow:  '0xd1b071'
+    blue:    '0x90c7f3'
+    magenta: '0xc2bdea'
+    cyan:    '0x88cbd4'
+    white:   '0xc9c9c9'
 
   indexed_colors:
     - { index: 16, color: '0xff9e64' }

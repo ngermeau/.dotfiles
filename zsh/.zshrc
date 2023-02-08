@@ -1,5 +1,5 @@
-export ZSH=~/.oh-my-zsh
 export TERM="xterm-256color"
+export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="awesomepanda"
 source $ZSH/oh-my-zsh.sh
@@ -27,7 +27,7 @@ alias e='exit'
 
 ##########################################################
 # PATH
-export PATH="/home/nicolas/Bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
+export PATH="/users/jax/bin:/users/jax/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
 export NODE_PATH=$HOME/.npm-global/lib/node_modules/
 export NODE_BIN=$HOME/.npm-global/bin
 
@@ -41,6 +41,3 @@ _Z_CMD="j"
 bindkey '^n' autosuggest-accept
 source $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=magenta'
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
