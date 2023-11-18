@@ -1,0 +1,51 @@
+set clipboard+=unnamed
+set number
+imap jj <Esc>
+set ideajoin
+set idearefactormode=keep
+set NERDTree
+
+let mapleader = ","
+
+" Actions
+nmap <leader>e :action GotoAction<CR>
+
+" Project navigation <D-a>
+nmap <D-a>o :action NextProjectWindow<CR>
+nmap <D-a>i :action PreviousProjectWindow<CR>
+
+" Files <leader>+f
+nmap <leader>fr :action GotoFile<CR>
+nmap <leader>ff :action RecentFiles<CR>
+nmap <leader>fn :action NewElement<CR>
+
+" Git <leader>+g
+nmap <leader>gg :action QuickList.git<CR>
+
+" Views <leader>+v
+map <leader>vo :action ActivateProjectToolWindow<CR>
+map <leader>vt :action ActivateTerminalToolWindow<CR>
+map <leader>vh :action HideAllWindows<CR>
+
+" Editor navigation <D>+a
+nmap <D-h> :action PrevSplitter<CR>
+nmap <D-l> :action NextSplitter<CR>
+nmap <D-a>v :action SplitVertically<CR>
+nmap <D-a>h :action SplitHorizontally<CR>
+
+nmap <D-i> :action Back<CR>
+nmap <D-o> :action Forward<CR>
+
+nmap <S-D-o> :action NextTab<CR>
+nmap <S-D-i> :action PreviousTab<CR>
+
+" File Edition
+nmap <D-u><D-u> :action GotoDeclaration<CR>
+nmap <D-u><D-i> :action ShowIntentionActions<CR>
+nmap <D-y><D-y> :action QuickList.refactor<CR>
+
+" Errors navigation
+nmap <D-,> :action GotoNextError<CR>
+
+" Run
+nmap <leader-r> :action QuickList.run<CR>
