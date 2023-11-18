@@ -21,7 +21,9 @@ alias h='history'
 alias vim='nvim'
 alias v='nvim'
 alias g='git'
-alias gs='git status'
+alias gstatus='git status'
+alias gadd='git add .'
+alias gpush='git push origin'
 alias yolo='git add . && git co -m "yolo" && git push origin main'
 alias e='exit'
 
@@ -41,3 +43,4 @@ _Z_CMD="j"
 bindkey '^n' autosuggest-accept
 source $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+export GOOGLE_APPLICATION_CREDENTIALS="/Users/jax/Dev/mypodcast/speech-to-text-soub-1-aaa239f83da9.json"

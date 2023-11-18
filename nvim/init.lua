@@ -220,7 +220,8 @@ local config = {
     init = {
         { "tpope/vim-surround" },
         { "mattn/emmet-vim" },
-        { "MunifTanjim/prettier.nvim" }
+        { "MunifTanjim/prettier.nvim" },
+        { "github/copilot.vim" }
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
 
