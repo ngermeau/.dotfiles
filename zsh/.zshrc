@@ -40,7 +40,11 @@ _Z_CMD="j"
 
 ###########ss##############################################
 # AUTOSUGGST
-bindkey '^n' autosuggest-accept
+bindkey '^I' autosuggest-accept
 source $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export GOOGLE_APPLICATION_CREDENTIALS="/Users/jax/Dev/mypodcast/speech-to-text-soub-1-aaa239f83da9.json"
+
+# Add JBang to environment
+alias j!=jbang
+export PATH="$HOME/.jbang/bin:$PATH"

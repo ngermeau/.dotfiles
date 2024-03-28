@@ -1,51 +1,53 @@
 set clipboard+=unnamed
-set number
-imap jj <Esc>
+set number relativenumber
 set ideajoin
 set idearefactormode=keep
 set NERDTree
+set showmode
+set showcmd
+set visualbell
+set scrolloff=10
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+set highlightedyank
+set surround
+set notimeout
 
-let mapleader = ","
+let mapleader = " "
+
+imap jj <Esc>
+
+" Goto navigation
+nmap gi :action GotoImplementation<CR>
+nmap gd :action GotoDeclaration<CR>
+nmap gy :action GotoTypeDeclaration<CR>
+nmap go :action QuickJavaDoc<CR>
+nmap K :action QuickImplementations<CR>
+
+" Errors
+nmap [e :action GotoPreviousError<CR>
+nmap ]e :action GotoNextError<CR>
 
 " Actions
-nmap <leader>e :action GotoAction<CR>
+nmap <leader>v :action GotoAction<CR>
 
-" Project navigation <D-a>
-nmap <D-a>o :action NextProjectWindow<CR>
-nmap <D-a>i :action PreviousProjectWindow<CR>
-
-" Files <leader>+f
-nmap <leader>fr :action GotoFile<CR>
-nmap <leader>ff :action RecentFiles<CR>
+" Files
 nmap <leader>fn :action NewElement<CR>
+nmap <leader>fr :action RecentFiles<CR>
+nmap <leader>ff :action GotoFile<CR>
 
-" Git <leader>+g
+" Search
+nmap <leader>sg :action FindInPath<CR>
+
+" Various tool windows
+nmap <leader>e :action ActivateProjectToolWindow<CR>
+nmap <leader>l :action ActivateTerminalToolWindow<CR>
+
+" git
+nmap <leader>gc :action ActivateVersionControlToolWindow<CR>
 nmap <leader>gg :action QuickList.git<CR>
+nmap <leader>rr  :action QuickList.run<CR>
 
-" Views <leader>+v
-map <leader>vo :action ActivateProjectToolWindow<CR>
-map <leader>vt :action ActivateTerminalToolWindow<CR>
-map <leader>vh :action HideAllWindows<CR>
-
-" Editor navigation <D>+a
-nmap <D-h> :action PrevSplitter<CR>
-nmap <D-l> :action NextSplitter<CR>
-nmap <D-a>v :action SplitVertically<CR>
-nmap <D-a>h :action SplitHorizontally<CR>
-
-nmap <D-i> :action Back<CR>
-nmap <D-o> :action Forward<CR>
-
-nmap <S-D-o> :action NextTab<CR>
-nmap <S-D-i> :action PreviousTab<CR>
-
-" File Edition
-nmap <D-u><D-u> :action GotoDeclaration<CR>
-nmap <D-u><D-i> :action ShowIntentionActions<CR>
-nmap <D-y><D-y> :action QuickList.refactor<CR>
-
-" Errors navigation
-nmap <D-,> :action GotoNextError<CR>
-
-" Run
-nmap <leader-r> :action QuickList.run<CR>
+" change terminal setting to avoid esc to jump back to focus editor (on the internet)

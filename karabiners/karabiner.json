@@ -480,11 +480,11 @@
                         ]
                     },
                     {
-                        "description": "command + g to esc",
+                        "description": "command + r to esc",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "d",
+                                    "key_code": "r",
                                     "modifiers": {
                                         "mandatory": [
                                             "option"
