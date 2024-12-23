@@ -29,7 +29,7 @@ alias e='exit'
 
 ##########################################################
 # PATH
-export PATH="/users/jax/bin:/users/jax/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
+export PATH="/users/jax/bin:/users/jax/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/users/jax/go/bin"
 export NODE_PATH=$HOME/.npm-global/lib/node_modules/
 export NODE_BIN=$HOME/.npm-global/bin
 
